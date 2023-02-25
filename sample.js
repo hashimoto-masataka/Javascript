@@ -1,21 +1,19 @@
 let user_hand = prompt("ジャンケンの手をグー、チョキ、パーから選んでください。");
+while ((user_hand !=("グー")) && (user_hand !=("チョキ"))&& (user_hand!=("パー")) && (user_hand!= null)){
+    alert("グー・チョキ・パーのいずれかを入力してください");
+   user_hand = prompt("ジャンケンの手をグー、チョキ、パーから選んでください。");
+}
 
 let js_hand = getJShand();
 
 let judge = winLose(user_hand, js_hand);
 
 
-if (user_hand.indexOf(("グー")||("チョキ")||("パー")) !== -1){
+if (user_hand != null){
     alert("あなたの選んだ手は"+ user_hand+"です。JavaScriptの選んだ手は"+ js_hand + "です。結果は"+ judge + "です。");
+}else{
+    alert("またチャレンジしてね");
 }
-
-if (user_hand.indexOf(("グー")||("チョキ")||("パー")) === -1){
-    alert("グー・チョキ・パーのいずれかを入力してください")
-   let user_hand = prompt("ジャンケンの手をグー、チョキ、パーから選んでください。");
-   return
-}
-     
-
 
 function getJShand(){
     let js_hand_num = Math.floor(Math.random() * 3);
